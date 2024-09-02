@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding-block: 2rem 1rem;
+
+  .title {
+    font-size: 24px;
+    font-weight: 900;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #3a32be;
+    color: #fff;
+    border-color: #3a32be;
+    cursor: pointer;
+    box-shadow: 0 0 2px #3a32be;
+    transition: all 0.2s ease-in-out;
+
+    &-developer {
+      background-color: #000;
+      border-color: #000;
+      box-shadow: 0 0 2px #000;
+      color: #fff;
+    }
+  }
+}

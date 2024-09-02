@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.scss";
+
+import HeroSection from "./components/Smart/Hero/HeroSection.jsx";
+import Navbar from "./components/Smart/Navbar/Navbar.jsx";
+import BaseCard from "./components/Base/BaseCard/BaseCard.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Navbar />
+      <HeroSection />
+
+      <div className="container">
+        <BaseCard>
+          <h1 className="title">For Developers</h1>
+          <p className="description">
+            Browse our React jobs and start your career today
+          </p>
+          <button className="btn btn-developer">Browse Jobs</button>
+        </BaseCard>
+        <BaseCard>
+          <h1 className="title">For Employers</h1>
+          <p className="description">
+            List your jobs to find the perfect developer for the role
+          </p>
+          <button className="btn">Add Job</button>
+        </BaseCard>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
