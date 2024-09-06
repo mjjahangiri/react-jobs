@@ -1,0 +1,109 @@
+.job-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+  gap: 0;
+  height: calc(100vh - 82px);
+
+  .back {
+    color: #3a32be;
+    cursor: pointer;
+    padding: 1.25rem 2rem;
+  }
+
+  .job-container {
+    background-color: #edf5fe;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 3rem;
+    flex-grow: 1;
+
+    .job-detail {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 1.5rem;
+      flex-grow: 1;
+      height: 100%;
+
+      .job-headers {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: 1rem;
+        padding: 1.25rem;
+        background-color: #fff;
+        border-radius: 3px;
+
+        .location-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.25rem;
+
+          .location-icon {
+            width: 1rem;
+          }
+
+          .location-name {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .job-description {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 3px;
+        height: 100%;
+      }
+    }
+
+    .job-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      gap: 1rem;
+      border-radius: 3px;
+      padding: 0 1rem 1rem;
+      flex-basis: 20%;
+      background-color: #fff;
+      height: 100%;
+
+      .title {
+        font-weight: 900;
+        padding-block: 1rem 0.5rem;
+      }
+
+      .btn {
+        padding: 0.5rem;
+        border-radius: 30px;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        pointer-events: none;
+
+        width: 100%;
+
+        &.edit {
+          background-color: #3a32be;
+        }
+        &.delete {
+          background-color: #bb0000;
+        }
+      }
+    }
+  }
+}
