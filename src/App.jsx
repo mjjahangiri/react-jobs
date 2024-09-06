@@ -1,33 +1,29 @@
-import "./App.scss";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
 
-import HeroSection from "./components/Smart/Hero/HeroSection.jsx";
-import Navbar from "./components/Smart/Navbar/Navbar.jsx";
-import BaseCard from "./components/Base/BaseCard/BaseCard.jsx";
+import Home from "./pages/Home.jsx";
+import DefaultLayout from "./layouts/DefaultLayout.jsx";
+import Jobs from "./pages/Jobs.jsx";
+import AddJob from "./pages/AddJob.jsx";
+import Job, { JobLoader } from "./pages/Job.jsx";
 
-function App() {
-  return (
-    <>
-      <Navbar />
-      <HeroSection />
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<DefaultLayout />}>
+      <Route index element={<Home />} />
+      <Route path="/jobs" element={<Jobs />} />
+      <Route path="/jobs/:id" element={<Job />} loader={JobLoader} />
+      <Route path="/add-job" element={<AddJob />} />
+    </Route>
+  )
+);
 
-      <div className="container">
-        <BaseCard>
-          <h1 className="title">For Developers</h1>
-          <p className="description">
-            Browse our React jobs and start your career today
-          </p>
-          <button className="btn btn-developer">Browse Jobs</button>
-        </BaseCard>
-        <BaseCard>
-          <h1 className="title">For Employers</h1>
-          <p className="description">
-            List your jobs to find the perfect developer for the role
-          </p>
-          <button className="btn">Add Job</button>
-        </BaseCard>
-      </div>
-    </>
-  );
-}
+const App = () => {
+  return <RouterProvider router={router} />;
+};
 
 export default App;

@@ -1,0 +1,15 @@
+.recent-job-wrapper {
+  padding: 1rem 0.75rem;
+  border-radius: 8px;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+
+  min-width: 350px;
+  flex-basis: 25%;
+  // max-width: 400px;
+}
