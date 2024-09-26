@@ -1,5 +1,7 @@
+import SmartAddJob from "../components/Smart/addJob/SmartAddJob";
+
 const AddJob = () => {
-  return <div>AddJob</div>;
+  return <SmartAddJob />;
 };
 
 export default AddJob;

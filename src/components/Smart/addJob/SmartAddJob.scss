@@ -1,0 +1,60 @@
+.smart-add-job {
+  background-color: #edf5fe;
+  width: 100%;
+  height: calc(100vh - 82px);
+  padding-block: 4rem;
+
+  .form-wrapper {
+    padding: 1rem;
+    margin: 0 auto;
+    width: clamp(400px, 600px, 96%);
+
+    background-color: #fff;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+
+    .title {
+      font-size: xx-large;
+      font-weight: 800;
+      width: 100%;
+      text-align: center;
+      margin-block: 1rem;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      width: 100%;
+
+      label {
+        font-weight: bold;
+      }
+      select {
+        width: 100%;
+        height: 30px;
+      }
+      input {
+        height: 30px;
+        width: 100%;
+      }
+
+      input[type="submit"] {
+        background-color: #3a32be;
+        color: #fff;
+        outline: none;
+        border: none;
+        border-radius: 50px;
+        margin-block-start: 1rem;
+        height: 35px;
+        font-size: medium;
+        cursor: pointer;
+      }
+    }
+  }
+}
