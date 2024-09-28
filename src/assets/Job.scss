@@ -93,9 +93,10 @@
         color: #fff;
         font-size: 12px;
         text-align: center;
-        pointer-events: none;
-
         width: 100%;
+        outline: none;
+        border: none;
+        cursor: pointer;
 
         &.edit {
           background-color: #3a32be;

@@ -1,10 +1,24 @@
 import "../assets/Job.scss";
 
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import location from "../assets/location.svg";
 
 const Job = () => {
+  const navigate = useNavigate();
   const job = useLoaderData();
+
+  const deleteJobHandler = async () => {
+    const confirm = window.confirm("Are you sure to delete this job ?");
+
+    if (!confirm) return;
+
+    await fetch(`http://localhost:4000/jobs/${job.id}`, {
+      method: "DELETE",
+    });
+
+    navigate("/jobs");
+  };
+
   return (
     <div className="job-wrapper">
       <Link className="back" to="/jobs">
@@ -32,9 +46,9 @@ const Job = () => {
           <Link className="btn edit" to="">
             Edit Job
           </Link>
-          <Link className="btn delete" to="">
+          <button className="btn delete" onClick={deleteJobHandler}>
             Delete Job
-          </Link>
+          </button>
         </aside>
       </div>
     </div>

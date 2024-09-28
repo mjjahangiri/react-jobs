@@ -17,14 +17,6 @@
       "location": "madrid"
     },
     {
-      "id": "3",
-      "title": "Backend Developer",
-      "description": "Experienced with modern JS stack, experience with Node.",
-      "employment_type": "Full time",
-      "salary": "$70K - $80K / Year",
-      "location": "amsterdam"
-    },
-    {
       "id": "4",
       "title": "DevOps Engineer",
       "description": "Experienced with Docker and Kubernetes.",
@@ -47,22 +39,6 @@
       "employment_type": "Full time",
       "salary": "$70K - $80K / Year",
       "location": "berlin"
-    },
-    {
-      "id": "7",
-      "title": "IT Administrator",
-      "description": "Experienced with systems planning, security principles, and general software management best practices.",
-      "employment_type": "part_time",
-      "salary": "$70K - $80K / Year",
-      "location": "amsterdam"
-    },
-    {
-      "id": "8",
-      "title": "IT Recruiter",
-      "description": "Experienced with with various selection processes (phone interview, reference check, etc).",
-      "employment_type": "part_time",
-      "salary": "$70K - $80K / Year",
-      "location": "madrid"
     },
     {
       "id": "9",
