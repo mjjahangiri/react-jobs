@@ -1,8 +1,27 @@
-import "./SmartAddJob.scss";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import "./SmartJobAction.scss";
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const AddJob = () => {
+  const params = useParams();
+
+  const [job, setJob] = useState(null);
+
+  const getJob = async (params) => {
+    const res = await fetch(`http://localhost:4000/jobs/${params.id}`);
+    const data = await res.json();
+    setJob(data);
+    setType(data.type);
+    setTitle(data.title);
+    setDescription(data.description);
+    setSalary(data.salary);
+    setLocation(data.location);
+  };
+
+  useEffect(() => {
+    if (Object.keys(params).length) getJob(params);
+  }, [params]);
+
   const [type, setType] = useState("Full_Time");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -32,10 +51,37 @@ const AddJob = () => {
 
     navigate("/jobs");
   };
+
+  const editJobHandler = async (e) => {
+    e.preventDefault();
+
+    const updatedJob = {
+      id: params.id,
+      type,
+      title,
+      description,
+      salary,
+      location,
+    };
+
+    await fetch(`http://localhost:4000/jobs/${params.id}`, {
+      method: "PUT",
+      headers: {
+        "content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedJob),
+    });
+
+    navigate("/jobs");
+  };
+
   return (
     <div className="smart-add-job">
-      <form className="form-wrapper" onSubmit={addJobHandler}>
-        <h2 className="title">Add Job</h2>
+      <form
+        className="form-wrapper"
+        onSubmit={job ? editJobHandler : addJobHandler}
+      >
+        <h2 className="title">{job ? "Update Job" : "Add Job"}</h2>
         <div className="form-row">
           <label htmlFor="job-type">Job Type</label>
           <select
@@ -96,7 +142,7 @@ const AddJob = () => {
           />
         </div>
         <div className="form-row">
-          <input type="submit" value={"Add Job"} />
+          <input type="submit" value={job ? "Update Job" : "Add Job"} />
         </div>
         <div className="form-row">
           <Link to="/jobs" className="btn back">

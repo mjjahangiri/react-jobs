@@ -43,7 +43,7 @@ const Job = () => {
         </main>
         <aside className="job-actions">
           <h4 className="title">Manage Job</h4>
-          <Link className="btn edit" to="">
+          <Link className="btn edit" to={`/edit-job/${job.id}`}>
             Edit Job
           </Link>
           <button className="btn delete" onClick={deleteJobHandler}>
