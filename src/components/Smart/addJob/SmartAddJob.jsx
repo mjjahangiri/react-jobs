@@ -1,6 +1,6 @@
 import "./SmartAddJob.scss";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddJob = () => {
   const [type, setType] = useState("Full_Time");
@@ -97,6 +97,11 @@ const AddJob = () => {
         </div>
         <div className="form-row">
           <input type="submit" value={"Add Job"} />
+        </div>
+        <div className="form-row">
+          <Link to="/jobs" className="btn back">
+            Back to Jobs
+          </Link>
         </div>
       </form>
     </div>

@@ -55,6 +55,21 @@
         font-size: medium;
         cursor: pointer;
       }
+
+      .btn {
+        border-radius: 50px;
+        width: 100%;
+        height: 35px;
+        font-size: medium;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.back {
+          background-color: #000;
+          color: #fff;
+        }
+      }
     }
   }
 }
